@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Predict</title>
+{% endblock %}
+
+{% block body %}
+<h2>Predict</h2>
+<hr>
+<br>
+
+<form action="/predict" , method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="sat">satisfaction_level</label>
+            <input class="form-control" type="number" , step="0.00001" name="satisfaction_level" id="satisfaction level"
+                placeholder="Enter satisfaction level max number 1" aria-label="Enter satisfaction evel max number 1">
+            <small id="sathelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="last evaluation">last_evaluation</label>
+            <input class="form-control" type="number" , step="0.00001" name="last_evaluation" id="last evaluation"
+                placeholder="Enter last evaluation max number 1" aria-label="Enter last evaluation max number 1">
+            <small id="lasthelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="number project">number_project</label>
+            <input class="form-control" type="number" , step="1" name="number_project" id="number project"
+                placeholder="Enter number project" aria-label="Enter number project">
+            <small id="nphelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="average montly hours">average_montly_hours</label>
+            <input class="form-control" type="number" , step="1" name="average_montly_hours" id="average montly hours"
+                placeholder="Enter average montly hours" aria-label="Enter average montly hours">
+            <small id="avhhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="time_spend_company">time_spend_company</label>
+            <input class="form-control" type="number" , step="1" name="time_spend_company" id="time spend company" placeholder="Enter time spend_company"
+                aria-label="Enter time_spend_company">
+            <small id="tschelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="Work_accident">Work_accident</label>
+            <select class="form-control" type="number" name="Work_accident" id="Work_acc"
+                placeholder="Enter Work accident if yes enter 1 ,if no enter 0"
+                aria-label="Enter Work accident if yes enter 1,if no enter 0">
+                <option>0</option>
+                <option>1</option>
+               
+            </select>
+            <small id="Work_acc" class="form-text text-muted">This Field is
+                required.</small>
+            <br>
+
+            <label for="promotion_last_5years">promotion_last_5years</label>
+            <select class="form-control" type="number" name="promotion_last_5years" id="promotion_last_5years"
+                placeholder="Enter promotion_last_5years"
+                aria-label="Enter promotion_last_5years">
+                <option>0</option>
+                <option>1</option>
+               
+            </select>
+            <small id="promotion_last_5years" class="form-text text-muted">This Field is
+                required.</small>
+            <br>
+            <label for="salary">salary</label>
+            <select class="form-control" name="salary" id="salary"
+                placeholder="Enter salary"
+                aria-label="Enter salary">
+                <option>low</option>
+                <option>medium</option>
+                <option>high</option>
+               
+            </select>
+            <small id="salary" class="form-text text-muted">This Field is
+                required.</small>
+            <br>
+            <br>
+            <br>
+            <input class="btn btn-success btn-lg btn-block" type="submit" value="Predict">
+            <hr>
+            <h5> LEFT is :    {{ y_pred_val }}</h5>
+            <hr>
+        </div>
+</form>
+{% endblock %}
